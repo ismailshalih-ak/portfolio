@@ -1,5 +1,8 @@
 ---
 import '../styles/global.css';
+import Linkedin from '@lucide/astro/icons/linkedin';
+import Mail from '@lucide/astro/icons/mail';
+import ChevronDown from '@lucide/astro/icons/chevron-down';
 ---
 
 <html lang="en">
@@ -13,19 +16,17 @@ import '../styles/global.css';
 	<body class="font-sans text-gray-800 leading-relaxed">
 		<div class="h-screen flex flex-col justify-center items-center px-5 text-center">
 			<h1 class="text-5xl font-bold mb-3">Ismail Shalih Abdul Kholiq</h1>
-			<p class="text-xl text-gray-600 mb-6">Full Stack Engineer (3+ years) | Jakarta, Indonesia</p>
-			<p class="text-gray-600 mb-4">
-				LinkedIn: <a href="https://www.linkedin.com/in/ismailshalih-ak/" class="text-blue-600 hover:underline">ismailshalih-ak</a>
-			</p>
-			<p class="text-gray-600 mb-4">
-				Email: <a href="mailto:ismailshalih@gmail.com" class="text-blue-600 hover:underline">ismailshalih@gmail.com</a>
-			</p>
-			<button onclick="navigator.clipboard.writeText('ismailshalih@gmail.com'); alert('Email copied!')" class="mb-6 px-4 py-2 text-sm text-blue-600 border border-blue-600 rounded-md hover:bg-blue-50 transition-colors">Copy Email</button>
-			<a href="mailto:ismailshalih@gmail.com" class="inline-block px-8 py-4 bg-blue-600 text-white font-bold text-lg rounded-md hover:bg-blue-700 transition-colors mb-12">Contact Me</a>
+			<p class="text-xl text-gray-600 mb-6">Full Stack Engineer (3+ yoe) | Jakarta, Indonesia</p>
+			<div class="flex gap-6 mb-12">
+				<a href="https://www.linkedin.com/in/ismailshalih-ak/" target="_blank" class="relative group" title="LinkedIn">
+					<Linkedin class="w-10 h-10 text-gray-600 hover:text-blue-600 transition-colors" />
+				</a>
+				<a href="mailto:ismailshalih@gmail.com" class="relative group" title="Email">
+					<Mail class="w-10 h-10 text-gray-600 hover:text-blue-600 transition-colors" />
+				</a>
+			</div>
 			<div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-				<svg class="w-8 h-8 text-gray-600" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
-					<path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
-				</svg>
+				<ChevronDown class="w-8 h-8 text-gray-600" />
 			</div>
 		</div>
 
