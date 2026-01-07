@@ -3,6 +3,7 @@ import '../styles/global.css';
 import Linkedin from '@lucide/astro/icons/linkedin';
 import Mail from '@lucide/astro/icons/mail';
 import ChevronDown from '@lucide/astro/icons/chevron-down';
+import ExperienceItem from '../components/ExperienceItem';
 ---
 
 <html lang="en">
@@ -12,99 +13,98 @@ import ChevronDown from '@lucide/astro/icons/chevron-down';
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Ismail Shalih Abdul Kholiq - Resume</title>
+		<style>
+			.pulse-dot {
+				animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+			}
+			@keyframes pulse {
+				0%, 100% {
+					opacity: 1;
+				}
+				50% {
+					opacity: 0.5;
+				}
+			}
+		</style>
 	</head>
-	<body class="font-sans text-gray-800 leading-relaxed">
-		<div class="h-screen flex flex-col justify-center items-center px-5 text-center">
-			<h1 class="text-5xl font-bold mb-3">Ismail Shalih Abdul Kholiq</h1>
-			<p class="text-xl text-gray-600 mb-6">Full Stack Engineer (3+ yoe) | Jakarta, Indonesia</p>
+	<body class="font-sans text-foreground leading-relaxed">
+		<div class="h-screen flex flex-col justify-center items-center px-5 text-center relative">
+			<div id="bg-text" class="absolute inset-0 -z-10 flex flex-wrap content-center gap-4 opacity-[0.03] text-4xl font-bold pointer-events-none select-none"></div>
+			<h1 class="text-5xl font-bold mb-3 relative z-10">Ismail Shalih Abdul Kholiq</h1>
+			<p class="text-xl text-muted-foreground mb-6">Full Stack Engineer (4+ YoE) located in Jakarta, Indonesia</p>
 			<div class="flex gap-6 mb-12">
 				<a href="https://www.linkedin.com/in/ismailshalih-ak/" target="_blank" class="relative group" title="LinkedIn">
-					<Linkedin class="w-10 h-10 text-gray-600 hover:text-blue-600 transition-colors" />
+					<Linkedin class="w-10 h-10 text-muted-foreground hover:text-foreground transition-colors" />
 				</a>
 				<a href="mailto:ismailshalih@gmail.com" class="relative group" title="Email">
-					<Mail class="w-10 h-10 text-gray-600 hover:text-blue-600 transition-colors" />
+					<Mail class="w-10 h-10 text-muted-foreground hover:text-foreground transition-colors" />
 				</a>
 			</div>
+			<!-- <div class="flex flex-col gap-3 justify-center mb-12">
+				<span class="text-sm font-medium flex items-center gap-2">
+					<span class="w-2 h-2 bg-green-500 rounded-full pulse-dot"></span>
+					Open to Work
+				</span>
+				<span class="text-sm font-medium flex items-center gap-2">
+					<span class="w-2 h-2 bg-green-500 rounded-full pulse-dot"></span>
+					Open to Relocation
+				</span>
+			</div> -->
 			<div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-				<ChevronDown class="w-8 h-8 text-gray-600" />
+				<ChevronDown class="w-8 h-8 text-muted-foreground" />
 			</div>
 		</div>
 
 		<section class="max-w-3xl mx-auto px-5 py-16">
-			<h2 class="text-3xl font-bold border-b-4 border-blue-600 pb-2 mb-8">Experience</h2>
+			<h2 class="text-3xl font-bold text-center mb-8">Experience</h2>
 			
-			<div class="mb-12">
-				<p class="font-bold text-blue-600 mb-1">Aug 2025 - Nov 2025</p>
-				<p class="text-xl font-bold mb-1">Full Stack Developer</p>
-				<p class="italic text-gray-600 mb-4">Accord Innovations, Contract, Jakarta (Hybrid)</p>
-				<p class="mb-4">
-					Delivered frontend and backend enhancements for a client's cybersecurity finding management system using Next.js and Express.js. Implemented multiple change requests, improved UX, and reduced manual steps in key workflows. Completed development in half the allocated time.
-				</p>
-				<p class="mt-3 px-4 py-2 bg-gray-100 rounded text-sm">Tech Stack: Next.js, Express.js, Redis, RabbitMQ, PostgreSQL, Docker</p>
-			</div>
+			<ExperienceItem 
+				client:load
+				date="Aug 2025 - Nov 2025"
+				position="Full Stack Developer"
+				company="Accord Innovations, Contract, Jakarta (Hybrid)"
+				techStack="Next.js, Express.js, Redis, RabbitMQ, PostgreSQL, Docker"
+				description="Delivered frontend and backend enhancements for a client's cybersecurity finding management system using Next.js and Express.js. Implemented multiple change requests, improved UX, and reduced manual steps in key workflows. Completed development in half the allocated time."
+			/>
 
-			<div class="mb-12">
-				<p class="font-bold text-blue-600 mb-1">April 2022 - August 2024</p>
-				<p class="text-xl font-bold mb-1">Full Stack Engineer</p>
-				<p class="italic text-gray-600 mb-4">Segari, e-Groceries Startup, Jakarta (Remote)</p>
-				<p class="mb-4">
-					As a Full Stack Engineer on the PCGM (Pricing, Cost, Growth, and Mitra) team, I played a pivotal role in developing and deploying key features for the Segari web and mobile applications, as well as related internal tools. My contributions included:
-				</p>
-				<ul class="list-disc list-inside mb-4 space-y-2">
-					<li><strong>Discovery Page:</strong> Built Discovery Page, a CMS for showcasing images, videos, custom product grids and many more. Enabling the marketing team to create dedicated pages for promotions and flash sale campaigns. Some other pages that I developed are <strong>Voucher Selection Page</strong> and  <strong>Payment Settings Page</strong>.</li>
-					<li><strong>Third-Party Service Caching:</strong> Implemented caching for the price personalization service, reducing third-party API calls by ~50%. This optimization lowered infrastructure costs, improved response times, and minimized dependency on external service availability.</li>
-					<li><strong>Analytics Integration:</strong> Integrated analytics tools to track user behavior across web and mobile platforms, enabling data-driven decision making for product and marketing teams. Designed event schemas, implemented tracking via platforms like Google Analytics and Mixpanel, and collaborated with stakeholders to ensure relevant user actions were captured and reported accurately.</li>
-					<li>Other notable projects include <strong>Deeplink Handler, Image Compression, Page Load Improvements, Price Group Batch Upload</strong>, and various bug fixes.</li>
-				</ul>
-				<p class="mt-3 px-4 py-2 bg-gray-100 rounded text-sm">Tech Stack: Java Spring Boot, React.js, Flutter, PostgreSQL, Redis</p>
-			</div>
+			<ExperienceItem 
+				client:load
+				date="April 2022 - August 2024"
+				position="Full Stack Engineer"
+				company="Segari, e-Groceries Startup, Jakarta (Remote)"
+				techStack="Java Spring Boot, React.js, Flutter, PostgreSQL, Redis"
+				description="As a Full Stack Engineer on the PCGM (Pricing, Cost, Growth, and Mitra) team, I played a pivotal role in developing and deploying key features for the Segari web and mobile applications, as well as related internal tools. My contributions included:"
+				items={[
+					'<strong>Discovery Page:</strong> Built Discovery Page, a CMS for showcasing images, videos, custom product grids and many more. Enabling the marketing team to create dedicated pages for promotions and flash sale campaigns. Some other pages that I developed are <strong>Voucher Selection Page</strong> and  <strong>Payment Settings Page</strong>.',
+					'<strong>Third-Party Service Caching:</strong> Implemented caching for the price personalization service, reducing third-party API calls by ~50%. This optimization lowered infrastructure costs, improved response times, and minimized dependency on external service availability.',
+					'<strong>Analytics Integration:</strong> Integrated analytics tools to track user behavior across web and mobile platforms, enabling data-driven decision making for product and marketing teams. Designed event schemas, implemented tracking via platforms like Google Analytics and Mixpanel, and collaborated with stakeholders to ensure relevant user actions were captured and reported accurately.',
+					'Other notable projects include <strong>Deeplink Handler, Image Compression, Page Load Improvements, Price Group Batch Upload</strong>, and various bug fixes.'
+				]}
+			/>
 
-			<div class="mb-12">
-				<p class="font-bold text-blue-600 mb-1">Jun 2021 - March 2022</p>
-				<p class="text-xl font-bold mb-1">Software Engineer</p>
-				<p class="italic text-gray-600 mb-4">Solecode, IT Consulting Firm, Jakarta (Remote)</p>
-				<p><strong>Project: Internal Pre-Procurement Dashboard for a Major Energy Company</strong></p>
-				<p class="mb-4">
-					Delivering a web platform dedicated to pre-procurement operations, supporting procurement teams across multiple subholding upstreams. Key Features Delivered:
-				</p>
-				<ul class="list-disc list-inside mb-4 space-y-2">
-					<li><strong>Procurement List Module:</strong> Enabled procurement teams to create, monitor, and manage request lists for materials and services.</li>
-					<li><strong>TKDN Achievement Reports:</strong> Implemented functionality to track and display compliance with local content regulations.</li>
-					<li><strong>Vendor Performance Evaluation:</strong> Developed criteria-based dashboards and scorecards for contract-based vendor assessments.</li>
-					<li><strong>Service Performance Review:</strong> Supported post-contract evaluation of service delivery quality.</li>
-				</ul>
-				<p class="mt-3 px-4 py-2 bg-gray-100 rounded text-sm">Tech Stack: Java, Javascript, Wavemaker</p>
-			</div>
+			<ExperienceItem 
+				client:load
+				date="Jun 2021 - March 2022"
+				position="Software Engineer"
+				company="Solecode, IT Consulting Firm, Jakarta (Remote)"
+				techStack="Java, Javascript, Wavemaker"
+				projectName="Project: Internal Pre-Procurement Dashboard for a Major Energy Company"
+				description="Delivering a web platform dedicated to pre-procurement operations, supporting procurement teams across multiple subholding upstreams. Key Features Delivered:"
+				items={[
+					'<strong>Procurement List Module:</strong> Enabled procurement teams to create, monitor, and manage request lists for materials and services.',
+					'<strong>TKDN Achievement Reports:</strong> Implemented functionality to track and display compliance with local content regulations.',
+					'<strong>Vendor Performance Evaluation:</strong> Developed criteria-based dashboards and scorecards for contract-based vendor assessments.',
+					'<strong>Service Performance Review:</strong> Supported post-contract evaluation of service delivery quality.'
+				]}
+			/>
 		</section>
-
 		<section class="max-w-3xl mx-auto px-5 py-16">
-			<h2 class="text-3xl font-bold border-b-4 border-blue-600 pb-2 mb-8">Education</h2>
-			
-			<div class="mb-8">
-				<p class="font-bold text-blue-600 mb-1">Aug 2025</p>
-				<p><strong>IELTS Academic - Overall Band 8.0</strong> (L 8.5, R 8.5, W 7.5, S 6.5)</p>
-				<p>Issued by IDP Education Ltd</p>
-				<p>Credential ID: 25ID500945ABDI161A</p>
-			</div>
-
-			<div class="mb-8">
-				<p class="font-bold text-blue-600 mb-1">2015 - 2020</p>
-				<p><strong>Universitas Indonesia</strong></p>
-				<p>Bachelor's degree, Computer Science</p>
-				<ul class="list-disc list-inside space-y-1">
-					<li>Courses: Data Structure and Algorithms, Advanced Programming, Database, Web Design and Programming, Software Engineering</li>
-					<li>Activities: BEM Fasilkom UI, Compfest 8, Compfest 9</li>
-				</ul>
-			</div>
-		</section>
-
-		<section class="max-w-3xl mx-auto px-5 py-16">
-			<h2 class="text-3xl font-bold border-b-4 border-blue-600 pb-2 mb-8">Skills</h2>
+			<h2 class="text-3xl font-bold text-center mb-8">Skills</h2>
 			<ul class="space-y-3">
 				<li><strong>Frontend:</strong> React.js, React Native, Flutter, Javascript, Typescript, Tailwind, Next.js</li>
 				<li><strong>Backend:</strong> Java Spring Boot, Node.js, Express, Redis</li>
 				<li><strong>Database:</strong> PostgreSQL</li>
-				<li><strong>Cloud:</strong> AWS, Vercel</li>
+				<li><strong>Cloud:</strong> AWS, Vercel, Docker</li>
 				<li><strong>Tools:</strong> Jenkins, Git, Android Studio, IntelliJ, VSCode, DBeaver, Postman</li>
 			</ul>
 		</section>
