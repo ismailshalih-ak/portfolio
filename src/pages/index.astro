@@ -4,6 +4,7 @@ import Linkedin from '@lucide/astro/icons/linkedin';
 import Mail from '@lucide/astro/icons/mail';
 import ChevronDown from '@lucide/astro/icons/chevron-down';
 import ExperienceItem from '../components/ExperienceItem';
+import SkillCard from '../components/SkillCard';
 ---
 
 <html lang="en">
@@ -55,7 +56,7 @@ import ExperienceItem from '../components/ExperienceItem';
 			</div>
 		</div>
 
-		<section class="max-w-3xl mx-auto px-5 py-16">
+		<section class="max-w-3xl mx-auto px-5 py-8">
 			<h2 class="text-3xl font-bold text-center mb-8">Experience</h2>
 			
 			<ExperienceItem 
@@ -98,15 +99,56 @@ import ExperienceItem from '../components/ExperienceItem';
 				]}
 			/>
 		</section>
-		<section class="max-w-3xl mx-auto px-5 py-16">
+		<section class="max-w-3xl mx-auto px-5 py-8">
 			<h2 class="text-3xl font-bold text-center mb-8">Skills</h2>
-			<ul class="space-y-3">
-				<li><strong>Frontend:</strong> React.js, React Native, Flutter, Javascript, Typescript, Tailwind, Next.js</li>
-				<li><strong>Backend:</strong> Java Spring Boot, Node.js, Express, Redis</li>
-				<li><strong>Database:</strong> PostgreSQL</li>
-				<li><strong>Cloud:</strong> AWS, Vercel, Docker</li>
-				<li><strong>Tools:</strong> Jenkins, Git, Android Studio, IntelliJ, VSCode, DBeaver, Postman</li>
-			</ul>
+			<div class="space-y-8">
+				<div>
+					<h3 class="text-xl font-semibold mb-4">Frontend</h3>
+					<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+						<SkillCard client:load skill="React.js" />
+						<SkillCard client:load skill="React Native" />
+						<SkillCard client:load skill="Flutter" />
+						<SkillCard client:load skill="Javascript" />
+						<SkillCard client:load skill="Typescript" />
+						<SkillCard client:load skill="Tailwind" />
+						<SkillCard client:load skill="Next.js" />
+					</div>
+				</div>
+				<div>
+					<h3 class="text-xl font-semibold mb-4">Backend</h3>
+					<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+						<SkillCard client:load skill="Java Spring Boot" />
+						<SkillCard client:load skill="Node.js" />
+						<SkillCard client:load skill="Express" />
+						<SkillCard client:load skill="Redis" />
+					</div>
+				</div>
+				<div>
+					<h3 class="text-xl font-semibold mb-4">Database</h3>
+					<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+						<SkillCard client:load skill="PostgreSQL" />
+					</div>
+				</div>
+				<div>
+					<h3 class="text-xl font-semibold mb-4">Cloud</h3>
+					<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+						<SkillCard client:load skill="AWS" />
+						<SkillCard client:load skill="Vercel" />
+					</div>
+				</div>
+				<div>
+					<h3 class="text-xl font-semibold mb-4">Tools</h3>
+					<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+						<SkillCard client:load skill="Jenkins" />
+						<SkillCard client:load skill="Git" />
+						<SkillCard client:load skill="Android Studio" />
+						<SkillCard client:load skill="IntelliJ" />
+						<SkillCard client:load skill="VSCode" />
+						<SkillCard client:load skill="DBeaver" />
+						<SkillCard client:load skill="Postman" />
+					</div>
+				</div>
+			</div>
 		</section>
 	</body>
 </html>
