@@ -3,6 +3,8 @@ import '../styles/global.css';
 import Linkedin from '@lucide/astro/icons/linkedin';
 import Mail from '@lucide/astro/icons/mail';
 import ChevronDown from '@lucide/astro/icons/chevron-down';
+import ExperienceCard from '../components/ExperienceCard';
+import SkillBento from '../components/SkillBento';
 ---
 
 <html lang="en" class="bg-[#020122]">
@@ -24,15 +26,7 @@ import ChevronDown from '@lucide/astro/icons/chevron-down';
 				padding: 1.5rem;
 				background: #ffffff;
 			}
-			.bento-box {
-				border: 3px solid #020122;
-				background: #ffffff;
-				box-shadow: 6px 6px 0 #000000;
-			}
-			.bento-box-large {
-				background: #020122;
-				color: #ffffff;
-			}
+
 		</style>
 	</head>
 	<body class="bg-[#020122] font-['Space_Mono'] min-h-screen flex flex-col">
@@ -78,125 +72,95 @@ import ChevronDown from '@lucide/astro/icons/chevron-down';
 			<h2 class="font-['Space_Grotesk'] font-bold text-2xl md:text-3xl border-b-[3px] border-[#020122] pb-4 mb-12">VERSION HISTORY</h2>
 
 			<div class="space-y-8">
-				<!-- Job 1: Accord Innovations -->
-				<div class="flex gap-0">
-					<div class="w-1 bg-[#FF5722] flex-shrink-0"></div>
-					<div class="border-[3px] border-[#020122] bg-white box-shadow-[6px_6px_0_#000000] flex-1">
-						<div class="p-6">
-							<div class="flex items-center gap-4 mb-3">
-								<span class="font-['Space_Grotesk'] font-bold text-md text-[#4F46E5]">Aug 2025 - Nov 2025</span>
-								<span class="text-sm font-bold bg-[#020122] text-white px-2 py-1">CONTRACT</span>
-							</div>
-							<p class="font-semibold text-xl mb-1">Full Stack Developer</p>
-							<div class="flex items-center gap-4 mb-2">
-								<h3 class="font-['Space_Grotesk'] font-bold text-lg">Accord Innovations</h3>
-								<p class="text-md text-gray-600">IT Consultant, Jakarta (Hybrid)</p>
-							</div>
-							<p class="mt-4">Delivered frontend and backend enhancements for a client's cybersecurity finding management system using Next.js and Express.js. Implemented multiple change requests, improved UX, and reduced manual steps in key workflows. Completed development in half the allocated time.</p>
-						</div>
-					</div>
-				</div>
+				<ExperienceCard
+					client:load
+					date="Aug 2025 - Nov 2025   (contract)"
+					role="Full Stack Developer"
+					company="Accord Innovations"
+					companyDesc="IT Consultant, Jakarta (Hybrid)"
+					techStack={['Next.js', 'Express.js', 'Redis', 'RabbitMQ', 'PostgreSQL', 'Docker']}
+					description="Delivered frontend and backend enhancements for a client's cybersecurity finding management system using Next.js and Express.js. Implemented multiple change requests, improved UX, and reduced manual steps in key workflows. Completed development in half the allocated time."
+					timelineColor="#FF5722"
+				/>
 
-				<!-- Job 2: Segari -->
-				<div class="flex gap-0">
-					<div class="w-1 bg-[#4F46E5] flex-shrink-0"></div>
-					<div class="border-[3px] border-[#020122] bg-white box-shadow-[6px_6px_0_#000000] flex-1">
-						<div class="p-6">
-							<div class="flex items-baseline gap-4 mb-3">
-								<span class="font-['Space_Grotesk'] font-bold text-md text-[#4F46E5]">Apr 2022 - Aug 2024</span>
-							</div>
-							<p class="font-semibold text-xl mb-1">Full Stack Engineer</p>
-							<div class="flex items-center gap-4 mb-2">
-								<h3 class="font-['Space_Grotesk'] font-bold text-lg">Segari</h3>
-								<p class="text-md text-gray-600">e-Groceries Startup, Jakarta (Remote)</p>
-							</div>
-							<p class="mt-4">As a Full Stack Engineer on the PCGM (Pricing, Cost, Growth, and Mitra) team, I played a pivotal role in developing and deploying key features for the Segari web and mobile applications, as well as related internal tools. My contributions included:</p>
-							<ul class="space-y-2">
-								<li><strong>Discovery Page:</strong> Built Discovery Page, a CMS for showcasing images, videos, custom product grids and many more. Enabling the marketing team to create dedicated pages for promotions and flash sale campaigns. Some other pages that I developed are <strong>Voucher Selection Page</strong> and <strong>Payment Settings Page</strong>.</li>
-								<li><strong>Third-Party Service Caching:</strong> Implemented caching for the price personalization service, reducing third-party API calls by ~50%. This optimization lowered infrastructure costs, improved response times, and minimized dependency on external service availability.</li>
-								<li><strong>Analytics Integration:</strong> Integrated analytics tools to track user behavior across web and mobile platforms, enabling data-driven decision making for product and marketing teams. Designed event schemas, implemented tracking via platforms like Google Analytics and Mixpanel, and collaborated with stakeholders to ensure relevant user actions were captured and reported accurately.</li>
-								<li>Other notable projects include <strong>Deeplink Handler, Image Compression, Page Load Improvements, Price Group Batch Upload</strong>, and various bug fixes.</li>
-							</ul>
-						</div>
-					</div>
-				</div>
+				<ExperienceCard
+					client:load
+					date="Apr 2022 - Aug 2024"
+					role="Full Stack Engineer"
+					company="Segari"
+					companyDesc="e-Groceries Startup, Jakarta (Remote)"
+					techStack={['Java Spring Boot', 'React.js', 'Flutter', 'PostgreSQL', 'Redis']}
+					description="As a Full Stack Engineer on the PCGM (Pricing, Cost, Growth, and Mitra) team, I played a pivotal role in developing and deploying key features for the Segari web and mobile applications, as well as related internal tools. My contributions included:"
+					items={[
+						'<strong>Discovery Page:</strong> Built Discovery Page, a CMS for showcasing images, videos, custom product grids and many more. Enabling the marketing team to create dedicated pages for promotions and flash sale campaigns. Some other pages that I developed are <strong>Voucher Selection Page</strong> and <strong>Payment Settings Page</strong>.',
+						'<strong>Third-Party Service Caching:</strong> Implemented caching for the price personalization service, reducing third-party API calls by ~50%. This optimization lowered infrastructure costs, improved response times, and minimized dependency on external service availability.',
+						'<strong>Analytics Integration:</strong> Integrated analytics tools to track user behavior across web and mobile platforms, enabling data-driven decision making for product and marketing teams. Designed event schemas, implemented tracking via platforms like Google Analytics and Mixpanel, and collaborated with stakeholders to ensure relevant user actions were captured and reported accurately.',
+						'Other notable projects include <strong>Deeplink Handler, Image Compression, Page Load Improvements, Price Group Batch Upload</strong>, and various bug fixes.'
+					]}
+					timelineColor="#4F46E5"
+				/>
 
-				<!-- Job 3: Solecode -->
-				<div class="flex gap-0">
-					<div class="w-1 bg-[#020122] flex-shrink-0"></div>
-					<div class="border-[3px] border-[#020122] bg-white box-shadow-[6px_6px_0_#000000] flex-1">
-						<div class="p-6">
-							<div class="flex items-baseline gap-4 mb-3">
-								<span class="font-['Space_Grotesk'] font-bold text-md text-[#4F46E5]">Jun 2021 - Mar 2022</span>
-							</div>
-							<p class="font-semibold text-xl mb-1">Software Engineer</p>
-							<div class="flex items-center gap-4 mb-2">
-								<h3 class="font-['Space_Grotesk'] font-bold text-lg">Solecode</h3>
-								<p class="text-md text-gray-600">IT Consulting Firm, Jakarta (Remote)</p>
-							</div>
-							<p class="mt-4"><strong>Project: Internal Pre-Procurement Dashboard for a Major Energy Company</strong></p>
-							<p class="mt-2">Delivering a web platform dedicated to pre-procurement operations, supporting procurement teams across multiple subholding upstreams. Key Features Delivered:</p>
-							<ul class="space-y-2 mt-4">
-								<li><strong>Procurement List Module:</strong> Enabled procurement teams to create, monitor, and manage request lists for materials and services.</li>
-								<li><strong>TKDN Achievement Reports:</strong> Implemented functionality to track and display compliance with local content regulations.</li>
-								<li><strong>Vendor Performance Evaluation:</strong> Developed criteria-based dashboards and scorecards for contract-based vendor assessments.</li>
-								<li><strong>Service Performance Review:</strong> Supported post-contract evaluation of service delivery quality.</li>
-							</ul>
-						</div>
-					</div>
-				</div>
+				<ExperienceCard
+					client:load
+					date="Jun 2021 - Mar 2022"
+					role="Software Engineer"
+					company="Solecode"
+					companyDesc="IT Consulting Firm, Jakarta (Remote)"
+					techStack={['Java', 'Javascript', 'Wavemaker']}
+					projectName="Project: Internal Pre-Procurement Dashboard for a Major Energy Company"
+					description="Delivering a web platform dedicated to pre-procurement operations, supporting procurement teams across multiple subholding upstreams. Key Features Delivered:"
+					items={[
+						'<strong>Procurement List Module:</strong> Enabled procurement teams to create, monitor, and manage request lists for materials and services.',
+						'<strong>TKDN Achievement Reports:</strong> Implemented functionality to track and display compliance with local content regulations.',
+						'<strong>Vendor Performance Evaluation:</strong> Developed criteria-based dashboards and scorecards for contract-based vendor assessments.',
+						'<strong>Service Performance Review:</strong> Supported post-contract evaluation of service delivery quality.'
+					]}
+					timelineColor="#020122"
+				/>
 			</div>
 		</section>
 		
-		<!-- SKILLS SECTION -->
 		<section class="max-w-4xl mx-auto px-6 md:px-16 py-16 md:py-24">
 			<h2 class="font-['Space_Grotesk'] font-bold text-2xl md:text-3xl border-b-[3px] border-[#020122] pb-4 mb-12">THE TOOLBOX</h2>
-			
+
 			<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-				<!-- Row 1: Frontend | Frontend | Backend -->
-				<div class="bento-box bento-box-large p-6 md:col-span-2">
-					<p class="text-xs font-bold mb-4 opacity-70">FRONTEND</p>
-					<p class="text-2xl md:text-3xl font-bold leading-tight mb-4">React.js<br/>Next.js<br/>Typescript</p>
-				</div>
+				<SkillBento
+					client:load
+					title="FRONTEND"
+					content="React.js<br/>Next.js<br/>Typescript"
+					isLarge={true}
+					span={2}
+				/>
 
-				<div class="bento-box p-6">
-					<p class="text-xs font-bold mb-4 opacity-70">BACKEND</p>
-					<p class="text-xl md:text-2xl font-bold leading-tight">Java Springboot<br/>Node.js<br/>Express<br/>PostgreSQL<br/>Redis</p>
-				</div>
+				<SkillBento
+					client:load
+					title="BACKEND"
+					content="Java Spring Boot<br/>Node.js<br/>Express<br/>Redis<br/>PostgreSQL"
+				/>
 
-				<!-- Row 2: Infra | DB | Mobile -->
-				<div class="bento-box p-6">
-					<p class="text-xs font-bold mb-4 opacity-70">INFRASTRUCTURE</p>
-					<p class="text-xl md:text-2xl font-bold leading-tight">AWS<br/>Vercel<br/>Docker</p>
-				</div>
+				<SkillBento
+					client:load
+					title="INFRASTRUCTURE"
+					content="AWS<br/>Vercel<br/>Docker"
+				/>
 
-				<!-- <div class="bento-box p-6 border-dashed">
-					<p class="text-xs font-bold mb-4 opacity-70">DATABASE</p>
-					<p class="text-lg md:text-xl font-bold leading-tight">PostgreSQL</p>
-				</div> -->
-
-				<div class="bento-box p-6 border-dashed">
-					<p class="text-xs font-bold mb-4 opacity-70">MOBILE</p>
-					<p class="text-lg md:text-xl font-bold leading-tight">Flutter<br/>React Native</p>
-				</div>
+				<SkillBento
+					client:load
+					title="MOBILE"
+					content="Flutter<br/>React Native"
+				/>
 
 				<div class="hidden md:block"></div>
 
-				<!-- Row 3: Empty | Tools | Tools -->
-				<div class="hidden md:block"></div> <!-- Empty space -->
+				<div class="hidden md:block"></div>
 
-				<div class="bento-box bento-box-large p-6 md:col-span-2">
-					<p class="text-xs font-bold mb-4 opacity-70">TOOLS</p>
-					<div class="grid grid-cols-2 gap-2 text-lg md:text-xl font-bold">
-						<div>Jenkins</div>
-						<div>Git</div>
-						<div>Android Studio</div>
-						<div>IntelliJ</div>
-						<div>VSCode</div>
-						<div>DBeaver</div>
-						<div>Postman</div>
-					</div>
-				</div>
+				<SkillBento
+					client:load
+					title="TOOLS"
+					content="<div class='grid grid-cols-2 gap-2 text-lg md:text-xl font-bold'><div>Jenkins</div><div>Git</div><div>Android Studio</div><div>IntelliJ</div><div>VSCode</div><div>DBeaver</div><div>Postman</div></div>"
+					isLarge={true}
+					span={2}
+				/>
 			</div>
 		</section>
 		
