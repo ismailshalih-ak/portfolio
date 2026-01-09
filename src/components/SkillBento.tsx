@@ -21,7 +21,7 @@ export default function SkillBento({
         "border-[3px] border-[#020122] p-6 shadow-[6px_6px_0_#000000]",
         isLarge ? "bg-[#020122] text-white" : "bg-white",
         isDashed && "border-dashed",
-        span > 1 && `md:col-span-${span}`
+        span > 1 ? `md:col-span-2` : `md:col-span-1`,
       )}
     >
       <p className="text-xs font-bold mb-4 opacity-70">{title}</p>
