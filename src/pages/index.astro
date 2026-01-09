@@ -5,7 +5,7 @@ import Mail from '@lucide/astro/icons/mail';
 import ChevronDown from '@lucide/astro/icons/chevron-down';
 ---
 
-<html lang="en">
+<html lang="en" class="bg-[#020122]">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -15,27 +15,27 @@ import ChevronDown from '@lucide/astro/icons/chevron-down';
 		<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 		<style>
 			.hero-hollow {
-				-webkit-text-stroke: 3px #111111;
+				-webkit-text-stroke: 3px #020122;
 				-webkit-text-fill-color: transparent;
 				color: transparent;
 			}
 			.feature-block {
-				border: 3px solid #111111;
+				border: 3px solid #020122;
 				padding: 1.5rem;
 				background: #ffffff;
 			}
 			.bento-box {
-				border: 3px solid #111111;
+				border: 3px solid #020122;
 				background: #ffffff;
 				box-shadow: 6px 6px 0 #000000;
 			}
 			.bento-box-large {
-				background: #111111;
+				background: #020122;
 				color: #ffffff;
 			}
 		</style>
 	</head>
-	<body class="bg-[#F4F3EF] font-['Space_Mono'] min-h-screen">
+	<body class="bg-[#020122] font-['Space_Mono'] min-h-screen flex flex-col">
 		
 		<!-- HERO SECTION -->
 		<section class="relative min-h-screen flex flex-col items-center justify-center px-6 md:px-16 py-16 md:py-24">
@@ -49,26 +49,26 @@ import ChevronDown from '@lucide/astro/icons/chevron-down';
 					<span class="tracking-tighter -mt-12 md:-mt-18 lg:-mt-24 block">ENGINEER.</span>
 				</h1>
 				
-				<p class="max-w-2xl mx-auto mb-12 text-center font-['Space_Grotesk'] leading-relaxed text-[#111111]">
-					Jakarta-based engineer with 4+ years of shipping scalable systems. I don't just write code; I turn ideas into reality.
+				<p class="max-w-2xl mx-auto mb-12 text-center font-['Space_Grotesk'] leading-relaxed text-[#020122]">
+					Jakarta-based engineer with 4+ years of experience shipping code.
 				</p>
 				
-				<form class="flex gap-3 max-w-md mx-auto">
+				<!-- <form class="flex gap-3 max-w-md mx-auto">
 					<input
 						type="text"
 						placeholder="what is your idea?"
-						class="flex-1 px-4 py-3 border-[3px] border-[#111111] bg-white text-[#111111] font-['Space_Mono'] placeholder:text-gray-500 focus:outline-none focus:border-[#FF5722]"
+						class="flex-1 px-4 py-3 border-[3px] border-[#020122] bg-white text-[#020122] font-['Space_Mono'] placeholder:text-gray-500 focus:outline-none focus:border-[#FF5722]"
 					/>
 					<button
 						type="submit"
-						class="px-6 py-3 bg-[#FF5722] border-[3px] border-[#111111] text-[#111111] font-semibold hover:opacity-90 transition-opacity font-['Space_Mono']"
+						class="px-6 py-3 bg-[#FF5722] border-[3px] border-[#020122] text-[#020122] font-semibold hover:opacity-90 transition-opacity font-['Space_Mono']"
 					>
 						LET'S GO
 					</button>
-				</form>
+				</form> -->
 
 				<div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-					<ChevronDown class="w-8 h-8 text-[#111111]" />
+					<ChevronDown class="w-8 h-8 text-[#020122]" />
 				</div>
 			</div>
 		</section>
@@ -150,18 +150,18 @@ import ChevronDown from '@lucide/astro/icons/chevron-down';
 		
 		<!-- SKILLS SECTION -->
 		<section class="max-w-4xl mx-auto px-6 md:px-16 py-16 md:py-24">
-			<h2 class="font-['Space_Grotesk'] font-bold text-2xl md:text-3xl border-b-[3px] border-[#111111] pb-4 mb-12">THE TOOLBOX</h2>
+			<h2 class="font-['Space_Grotesk'] font-bold text-2xl md:text-3xl border-b-[3px] border-[#020122] pb-4 mb-12">THE TOOLBOX</h2>
 			
 			<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
 				<!-- Row 1: Frontend | Frontend | Backend -->
 				<div class="bento-box bento-box-large p-6 md:col-span-2">
 					<p class="text-xs font-bold mb-4 opacity-70">FRONTEND</p>
-					<p class="text-2xl md:text-3xl font-bold leading-tight mb-4">React.js<br/>React Native<br/>Next.js<br/>Typescript</p>
+					<p class="text-2xl md:text-3xl font-bold leading-tight mb-4">React.js<br/>Next.js<br/>Typescript</p>
 				</div>
 
 				<div class="bento-box p-6">
 					<p class="text-xs font-bold mb-4 opacity-70">BACKEND</p>
-					<p class="text-xl md:text-2xl font-bold leading-tight">Java Springboot<br/>Node.js<br/>Express<br/>Redis</p>
+					<p class="text-xl md:text-2xl font-bold leading-tight">Java Springboot<br/>Node.js<br/>Express<br/>PostgreSQL<br/>Redis</p>
 				</div>
 
 				<!-- Row 2: Infra | DB | Mobile -->
@@ -170,15 +170,17 @@ import ChevronDown from '@lucide/astro/icons/chevron-down';
 					<p class="text-xl md:text-2xl font-bold leading-tight">AWS<br/>Vercel<br/>Docker</p>
 				</div>
 
-				<div class="bento-box p-6 border-dashed">
+				<!-- <div class="bento-box p-6 border-dashed">
 					<p class="text-xs font-bold mb-4 opacity-70">DATABASE</p>
 					<p class="text-lg md:text-xl font-bold leading-tight">PostgreSQL</p>
-				</div>
+				</div> -->
 
 				<div class="bento-box p-6 border-dashed">
 					<p class="text-xs font-bold mb-4 opacity-70">MOBILE</p>
-					<p class="text-lg md:text-xl font-bold leading-tight">Flutter</p>
+					<p class="text-lg md:text-xl font-bold leading-tight">Flutter<br/>React Native</p>
 				</div>
+
+				<div class="hidden md:block"></div>
 
 				<!-- Row 3: Empty | Tools | Tools -->
 				<div class="hidden md:block"></div> <!-- Empty space -->
@@ -199,10 +201,10 @@ import ChevronDown from '@lucide/astro/icons/chevron-down';
 		</section>
 		
 		<!-- FOOTER -->
-		<footer class="bg-[#1A1A1A] text-white py-16">
+		<footer class="bg-[#020122] text-white py-16">
 			<div class="max-w-4xl mx-auto px-6 md:px-16">
 				<div class="flex flex-col items-center gap-6">
-					<p class="font-['Space_Grotesk'] font-bold text-2xl md:text-3xl mb-8">READY TO DEPLOY?</p>
+					<p class="font-['Space_Grotesk'] font-bold text-2xl md:text-3xl mb-8">READY TO BUILD?</p>
 					
 					<div class="flex gap-8 mb-8">
 						<a href="mailto:ismailshalih@gmail.com" class="hover:opacity-80 transition-opacity">
