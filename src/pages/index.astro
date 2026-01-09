@@ -3,8 +3,6 @@ import '../styles/global.css';
 import Linkedin from '@lucide/astro/icons/linkedin';
 import Mail from '@lucide/astro/icons/mail';
 import ChevronDown from '@lucide/astro/icons/chevron-down';
-import ExperienceItem from '../components/ExperienceItem';
-import SkillCard from '../components/SkillCard';
 ---
 
 <html lang="en">
@@ -13,142 +11,196 @@ import SkillCard from '../components/SkillCard';
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Ismail Shalih Abdul Kholiq - Resume</title>
+		<title>Ismail Shalih Abdul Kholiq - Portfolio</title>
+		<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 		<style>
-			.pulse-dot {
-				animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+			.hero-hollow {
+				-webkit-text-stroke: 3px #111111;
+				-webkit-text-fill-color: transparent;
+				color: transparent;
 			}
-			@keyframes pulse {
-				0%, 100% {
-					opacity: 1;
-				}
-				50% {
-					opacity: 0.5;
-				}
+			.feature-block {
+				border: 3px solid #111111;
+				padding: 1.5rem;
+				background: #ffffff;
+			}
+			.bento-box {
+				border: 3px solid #111111;
+				background: #ffffff;
+				box-shadow: 6px 6px 0 #000000;
+			}
+			.bento-box-large {
+				background: #111111;
+				color: #ffffff;
 			}
 		</style>
 	</head>
-	<body class="font-sans text-foreground leading-relaxed">
-		<div class="h-screen flex flex-col justify-center items-center px-5 text-center relative">
-			<div id="bg-text" class="absolute inset-0 -z-10 flex flex-wrap content-center gap-4 opacity-[0.03] text-4xl font-bold pointer-events-none select-none"></div>
-			<h1 class="text-5xl font-bold mb-3 relative z-10">Ismail Shalih Abdul Kholiq</h1>
-			<p class="text-xl text-muted-foreground mb-6">Full Stack Engineer (4+ YoE) located in Jakarta, Indonesia</p>
-			<div class="flex gap-6 mb-12">
-				<a href="https://www.linkedin.com/in/ismailshalih-ak/" target="_blank" class="relative group" title="LinkedIn">
-					<Linkedin class="w-10 h-10 text-muted-foreground hover:text-foreground transition-colors" />
-				</a>
-				<a href="mailto:ismailshalih@gmail.com" class="relative group" title="Email">
-					<Mail class="w-10 h-10 text-muted-foreground hover:text-foreground transition-colors" />
-				</a>
-			</div>
-			<!-- <div class="flex flex-col gap-3 justify-center mb-12">
-				<span class="text-sm font-medium flex items-center gap-2">
-					<span class="w-2 h-2 bg-green-500 rounded-full pulse-dot"></span>
-					Open to Work
-				</span>
-				<span class="text-sm font-medium flex items-center gap-2">
-					<span class="w-2 h-2 bg-green-500 rounded-full pulse-dot"></span>
-					Open to Relocation
-				</span>
-			</div> -->
-			<div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-				<ChevronDown class="w-8 h-8 text-muted-foreground" />
-			</div>
-		</div>
+	<body class="bg-[#F4F3EF] font-['Space_Mono'] min-h-screen">
+		
+		<!-- HERO SECTION -->
+		<section class="relative min-h-screen flex flex-col items-center justify-center px-6 md:px-16 py-16 md:py-24">
+			<!-- Top Left: ISMAIL.DEV -->
+			<div class="absolute top-8 left-8 text-[24px] font-bold leading-none font-['Space_Grotesk']">ISMAILSHALIH.DEV</div>
 
-		<section class="max-w-3xl mx-auto px-5 py-8">
-			<h2 class="text-3xl font-bold text-center mb-8">Experience</h2>
+			<div class="max-w-6xl mx-auto text-center">
+				<h1 class="font-['Space_Grotesk'] font-bold text-6xl md:text-[10rem] lg:text-[12rem] text-right">
+					<span class="hero-hollow tracking-tighter">FULL STACK</span>
+					<br>
+					<span class="tracking-tighter -mt-12 md:-mt-18 lg:-mt-24 block">ENGINEER.</span>
+				</h1>
+				
+				<p class="max-w-2xl mx-auto mb-12 text-center font-['Space_Grotesk'] leading-relaxed text-[#111111]">
+					Jakarta-based engineer with 4+ years of shipping scalable systems. I don't just write code; I turn ideas into reality.
+				</p>
+				
+				<form class="flex gap-3 max-w-md mx-auto">
+					<input
+						type="text"
+						placeholder="what is your idea?"
+						class="flex-1 px-4 py-3 border-[3px] border-[#111111] bg-white text-[#111111] font-['Space_Mono'] placeholder:text-gray-500 focus:outline-none focus:border-[#FF5722]"
+					/>
+					<button
+						type="submit"
+						class="px-6 py-3 bg-[#FF5722] border-[3px] border-[#111111] text-[#111111] font-semibold hover:opacity-90 transition-opacity font-['Space_Mono']"
+					>
+						SEND
+					</button>
+				</form>
+
+				<div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+					<ChevronDown class="w-8 h-8 text-[#111111]" />
+				</div>
+			</div>
+		</section>
+		
+		<!-- EXPERIENCE SECTION -->
+		<section id="experience" class="max-w-4xl mx-auto px-6 md:px-16 py-16 md:py-24">
+			<h2 class="font-['Space_Grotesk'] font-bold text-2xl md:text-3xl border-b-[3px] border-[#111111] pb-4 mb-12">VERSION HISTORY</h2>
 			
-			<ExperienceItem 
-				client:load
-				date="Aug 2025 - Nov 2025"
-				position="Full Stack Developer"
-				company="Accord Innovations, Contract, Jakarta (Hybrid)"
-				techStack="Next.js, Express.js, Redis, RabbitMQ, PostgreSQL, Docker"
-				description="Delivered frontend and backend enhancements for a client's cybersecurity finding management system using Next.js and Express.js. Implemented multiple change requests, improved UX, and reduced manual steps in key workflows. Completed development in half the allocated time."
-			/>
-
-			<ExperienceItem 
-				client:load
-				date="April 2022 - August 2024"
-				position="Full Stack Engineer"
-				company="Segari, e-Groceries Startup, Jakarta (Remote)"
-				techStack="Java Spring Boot, React.js, Flutter, PostgreSQL, Redis"
-				description="As a Full Stack Engineer on the PCGM (Pricing, Cost, Growth, and Mitra) team, I played a pivotal role in developing and deploying key features for the Segari web and mobile applications, as well as related internal tools. My contributions included:"
-				items={[
-					'<strong>Discovery Page:</strong> Built Discovery Page, a CMS for showcasing images, videos, custom product grids and many more. Enabling the marketing team to create dedicated pages for promotions and flash sale campaigns. Some other pages that I developed are <strong>Voucher Selection Page</strong> and  <strong>Payment Settings Page</strong>.',
-					'<strong>Third-Party Service Caching:</strong> Implemented caching for the price personalization service, reducing third-party API calls by ~50%. This optimization lowered infrastructure costs, improved response times, and minimized dependency on external service availability.',
-					'<strong>Analytics Integration:</strong> Integrated analytics tools to track user behavior across web and mobile platforms, enabling data-driven decision making for product and marketing teams. Designed event schemas, implemented tracking via platforms like Google Analytics and Mixpanel, and collaborated with stakeholders to ensure relevant user actions were captured and reported accurately.',
-					'Other notable projects include <strong>Deeplink Handler, Image Compression, Page Load Improvements, Price Group Batch Upload</strong>, and various bug fixes.'
-				]}
-			/>
-
-			<ExperienceItem 
-				client:load
-				date="Jun 2021 - March 2022"
-				position="Software Engineer"
-				company="Solecode, IT Consulting Firm, Jakarta (Remote)"
-				techStack="Java, Javascript, Wavemaker"
-				projectName="Project: Internal Pre-Procurement Dashboard for a Major Energy Company"
-				description="Delivering a web platform dedicated to pre-procurement operations, supporting procurement teams across multiple subholding upstreams. Key Features Delivered:"
-				items={[
-					'<strong>Procurement List Module:</strong> Enabled procurement teams to create, monitor, and manage request lists for materials and services.',
-					'<strong>TKDN Achievement Reports:</strong> Implemented functionality to track and display compliance with local content regulations.',
-					'<strong>Vendor Performance Evaluation:</strong> Developed criteria-based dashboards and scorecards for contract-based vendor assessments.',
-					'<strong>Service Performance Review:</strong> Supported post-contract evaluation of service delivery quality.'
-				]}
-			/>
-		</section>
-		<section class="max-w-3xl mx-auto px-5 py-8">
-			<h2 class="text-3xl font-bold text-center mb-8">Skills</h2>
-			<div class="space-y-8">
-				<div>
-					<h3 class="text-xl font-semibold mb-4">Frontend</h3>
-					<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-						<SkillCard client:load skill="React.js" />
-						<SkillCard client:load skill="React Native" />
-						<SkillCard client:load skill="Flutter" />
-						<SkillCard client:load skill="Javascript" />
-						<SkillCard client:load skill="Typescript" />
-						<SkillCard client:load skill="Tailwind" />
-						<SkillCard client:load skill="Next.js" />
-					</div>
+			<!-- Job 1: Accord Innovations -->
+			<div class="border-[3px] border-[#111111] bg-white box-shadow-[6px_6px_0_#000000] mb-8">
+				<div class="border-b-[3px] border-[#111111] p-4 flex justify-between items-start">
+					<span class="text-[#4F46E5] font-bold">2025</span>
+					<span class="font-bold">Accord Innovations</span>
+					<span class="font-bold">Full Stack Developer</span>
+					<span class="text-xs font-bold bg-[#111111] text-white px-2 py-1">HYBRID</span>
 				</div>
-				<div>
-					<h3 class="text-xl font-semibold mb-4">Backend</h3>
-					<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-						<SkillCard client:load skill="Java Spring Boot" />
-						<SkillCard client:load skill="Node.js" />
-						<SkillCard client:load skill="Express" />
-						<SkillCard client:load skill="Redis" />
-					</div>
-				</div>
-				<div>
-					<h3 class="text-xl font-semibold mb-4">Database</h3>
-					<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-						<SkillCard client:load skill="PostgreSQL" />
-					</div>
-				</div>
-				<div>
-					<h3 class="text-xl font-semibold mb-4">Cloud</h3>
-					<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-						<SkillCard client:load skill="AWS" />
-						<SkillCard client:load skill="Vercel" />
-					</div>
-				</div>
-				<div>
-					<h3 class="text-xl font-semibold mb-4">Tools</h3>
-					<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-						<SkillCard client:load skill="Jenkins" />
-						<SkillCard client:load skill="Git" />
-						<SkillCard client:load skill="Android Studio" />
-						<SkillCard client:load skill="IntelliJ" />
-						<SkillCard client:load skill="VSCode" />
-						<SkillCard client:load skill="DBeaver" />
-						<SkillCard client:load skill="Postman" />
+				<div class="p-4">
+					<p class="mb-6 font-semibold">Revamped cybersecurity management workflows using Next.js and Express.js. Reduced manual interventions to zero and cut development timelines by 50%.</p>
+					
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+						<div class="feature-block">
+							<strong class="text-[#4F46E5] block mb-2">THE PROBLEM</strong>
+							<p>Client cybersecurity system required modernization.</p>
+						</div>
+						<div class="feature-block">
+							<strong class="text-[#4F46E5] block mb-2">THE SOLUTION</strong>
+							<p>Delivered Next.js/Express.js enhancement. Halved development time. Zero manual steps remaining.</p>
+						</div>
 					</div>
 				</div>
 			</div>
+			
+			<!-- Job 2: Segari -->
+			<div class="border-[3px] border-[#111111] bg-white box-shadow-[6px_6px_0_#000000] mb-8">
+				<div class="border-b-[3px] border-[#111111] p-4 flex justify-between items-start">
+					<span class="text-[#4F46E5] font-bold">2022-2024</span>
+					<span class="font-bold">Segari</span>
+					<span class="font-bold">Full Stack Engineer</span>
+					<span class="text-xs font-bold bg-[#111111] text-white px-2 py-1">REMOTE</span>
+				</div>
+				<div class="p-4">
+					<p class="mb-6 font-semibold">Built core features for e-groceries platform impacting millions of users daily.</p>
+					
+					<div class="space-y-4">
+						<div class="feature-block">
+							<strong class="text-[#4F46E5] block mb-2">DISCOVERY CMS</strong>
+							<p>Built custom CMS for flash sales. Enabled non-tech teams to launch campaigns instantly.</p>
+						</div>
+						<div class="feature-block">
+							<strong class="text-[#4F46E5] block mb-2">CACHING</strong>
+							<p>Cut 3rd-party API dependency by 50%. Latency down. Infrastructure costs slashed.</p>
+						</div>
+						<div class="feature-block">
+							<strong class="text-[#4F46E5] block mb-2">DATA ANALYTICS</strong>
+							<p>Unified tracking across web/mobile. Granular user events. Data-driven decisions.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!-- Job 3: Solecode -->
+			<div class="border-[3px] border-[#111111] bg-white box-shadow-[6px_6px_0_#000000]">
+				<div class="border-b-[3px] border-[#111111] p-4 flex justify-between items-start">
+					<span class="text-[#4F46E5] font-bold">2021-2022</span>
+					<span class="font-bold">Solecode</span>
+					<span class="font-bold">Software Engineer</span>
+					<span class="text-xs font-bold bg-[#111111] text-white px-2 py-1">REMOTE</span>
+				</div>
+				<div class="p-4">
+					<p class="mb-6 font-semibold">Digitalized procurement lifecycle for a major energy company. Built vendor evaluation and compliance tracking.</p>
+				</div>
+			</div>
 		</section>
+		
+		<!-- SKILLS SECTION -->
+		<section class="max-w-4xl mx-auto px-6 md:px-16 py-16 md:py-24">
+			<h2 class="font-['Space_Grotesk'] font-bold text-2xl md:text-3xl border-b-[3px] border-[#111111] pb-4 mb-12">THE TOOLBOX</h2>
+			
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+				<!-- Large Box -->
+				<div class="bento-box bento-box-large p-6 md:col-span-2">
+					<p class="text-xs font-bold mb-4 opacity-70">JAVASCRIPT / TYPESCRIPT</p>
+					<p class="text-2xl md:text-3xl font-bold leading-tight mb-4">React.js<br/>React Native<br/>Next.js<br/>Typescript</p>
+				</div>
+				
+				<!-- Medium Box: Backend -->
+				<div class="bento-box p-6">
+					<p class="text-xs font-bold mb-4 opacity-70">BACKEND</p>
+					<p class="text-xl md:text-2xl font-bold leading-tight">Java Springboot<br/>Node.js<br/>Express<br/>Redis</p>
+				</div>
+				
+				<!-- Medium Box: Cloud/Infra -->
+				<div class="bento-box p-6">
+					<p class="text-xs font-bold mb-4 opacity-70">INFRASTRUCTURE</p>
+					<p class="text-xl md:text-2xl font-bold leading-tight">AWS<br/>Vercel<br/>Docker</p>
+				</div>
+				
+				<!-- Small Box: Database -->
+				<div class="bento-box p-6 border-dashed">
+					<p class="text-xs font-bold mb-4 opacity-70">DATABASE</p>
+					<p class="text-lg md:text-xl font-bold leading-tight">PostgreSQL</p>
+					<p class="text-lg md:text-xl font-bold leading-tight">Redis</p>
+				</div>
+				
+				<!-- Small Box: Mobile -->
+				<div class="bento-box p-6 border-dashed">
+					<p class="text-xs font-bold mb-4 opacity-70">MOBILE</p>
+					<p class="text-lg md:text-xl font-bold leading-tight">Flutter</p>
+				</div>
+			</div>
+		</section>
+		
+		<!-- FOOTER -->
+		<footer class="bg-[#1A1A1A] text-white py-16">
+			<div class="max-w-4xl mx-auto px-6 md:px-16">
+				<div class="flex flex-col items-center gap-6">
+					<p class="font-['Space_Grotesk'] font-bold text-2xl md:text-3xl mb-8">READY TO DEPLOY?</p>
+					
+					<div class="flex gap-8 mb-8">
+						<a href="mailto:ismailshalih@gmail.com" class="hover:opacity-80 transition-opacity">
+							<Mail class="w-8 h-8" />
+						</a>
+						<a href="https://www.linkedin.com/in/ismailshalih-ak/" target="_blank" class="hover:opacity-80 transition-opacity">
+							<Linkedin class="w-8 h-8" />
+						</a>
+					</div>
+					
+					<hr class="border-white/20 w-full mb-8" />
+					
+					<p class="text-xs text-white/50">&copy; 2026 Ismail Shalih Abdul Kholiq. Built with zero bloat.</p>
+				</div>
+			</div>
+		</footer>
 	</body>
 </html>
