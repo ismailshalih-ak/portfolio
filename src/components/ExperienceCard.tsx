@@ -1,8 +1,3 @@
-import {
-  Card,
-  CardContent,
-} from '@/components/ui/card';
-
 interface ExperienceCardProps {
   date: string;
   role: string;
