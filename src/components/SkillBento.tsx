@@ -1,8 +1,10 @@
 import { cn } from '@/lib/utils';
+import type { ReactNode } from 'react';
 
 interface SkillBentoProps {
   title: string;
-  content: string;
+  children?: ReactNode;
+  content?: string;
   isLarge?: boolean;
   isDashed?: boolean;
   span?: number;
@@ -10,6 +12,7 @@ interface SkillBentoProps {
 
 export default function SkillBento({
   title,
+  children,
   content,
   isLarge = false,
   isDashed = false,
@@ -25,10 +28,9 @@ export default function SkillBento({
       )}
     >
       <p className="text-xs font-bold mb-4 opacity-70">{title}</p>
-      <div
-        className="text-xl md:text-2xl font-bold leading-tight [&>div]:grid [&>div]:grid-cols-2 [&>div]:gap-2"
-        dangerouslySetInnerHTML={{ __html: content }}
-      />
+      <div className="text-xl md:text-2xl font-bold leading-tight space-y-1 [&>div]:grid [&>div]:grid-cols-2 [&>div]:gap-2">
+        { children }
+      </div>
     </div>
   );
 }

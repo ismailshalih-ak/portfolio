@@ -135,25 +135,40 @@ import SkillBento from '../components/SkillBento';
 			<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
 				<SkillBento
 					title="BACKEND"
-					content="Java Spring Boot<br/>Node.js<br/>Express<br/>Redis<br/>PostgreSQL"
 					isLarge={true}
 					span={2}
-				/>
+				>
+					<>
+						<div>Java Spring Boot</div>
+						<div>Node.js</div>
+						<div>Express</div>
+						<div>Redis</div>
+						<div>PostgreSQL</div>
+					</>
+				</SkillBento>
 
 				<SkillBento
 					title="FRONTEND"
-					content="React.js<br/>Next.js<br/>Typescript"
-				/>
+				>
+					<div>React.js</div>
+					<div>Next.js</div>
+					<div>Typescript</div>
+				</SkillBento>
 
 				<SkillBento
 					title="INFRASTRUCTURE"
-					content="AWS<br/>Vercel<br/>Docker"
-				/>
+				>
+					<div>AWS</div>
+					<div>Vercel</div>
+					<div>Docker</div>
+				</SkillBento>
 
 				<SkillBento
 					title="MOBILE"
-					content="Flutter<br/>React Native"
-				/>
+				>
+					<div>Flutter</div>
+					<div>React Native</div>
+				</SkillBento>
 
 				<div class="hidden md:block"></div>
 
@@ -161,10 +176,19 @@ import SkillBento from '../components/SkillBento';
 
 				<SkillBento
 					title="TOOLS"
-					content="<div class='grid grid-cols-2 gap-2 text-lg md:text-xl font-bold'><div>Jenkins</div><div>Git</div><div>Android Studio</div><div>IntelliJ</div><div>VSCode</div><div>DBeaver</div><div>Postman</div></div>"
 					isLarge={true}
 					span={2}
-				/>
+				>
+					<div class="grid grid-cols-2 gap-2 text-lg md:text-xl font-bold">
+						<div>Jenkins</div>
+						<div>Git</div>
+						<div>Android Studio</div>
+						<div>IntelliJ</div>
+						<div>VSCode</div>
+						<div>DBeaver</div>
+						<div>Postman</div>
+					</div>
+				</SkillBento>
 			</div>
 		</section>
 		</main>
