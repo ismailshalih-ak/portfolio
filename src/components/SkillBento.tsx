@@ -18,8 +18,8 @@ export default function SkillBento({
   return (
     <div
       className={cn(
-        "border-[3px] border-[#020122] p-6 shadow-[6px_6px_0_#000000]",
-        isLarge ? "bg-[#020122] text-white" : "bg-white",
+        "border-[3px] border-text-primary p-6 shadow-[6px_6px_0_var(--color-black)]",
+        isLarge ? "bg-text-primary text-white" : "bg-bg-secondary",
         isDashed && "border-dashed",
         span > 1 ? `md:col-span-2` : `md:col-span-1`,
       )}

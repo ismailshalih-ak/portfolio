@@ -25,13 +25,13 @@ export default function ExperienceCard({
 }: ExperienceCardProps) {
   return (
     <div className="flex gap-0 mb-8">
-      <div className="w-1 flex-shrink-0" style={{ backgroundColor: timelineColor }}></div>
-      <div className="border-[3px] border-[#020122] bg-white shadow-[6px_6px_0_#000000] flex-1">
+      <div className={`w-1 flex-shrink-0 ${timelineColor.startsWith('var(') ? '' : `bg-${timelineColor}`}`} style={{ backgroundColor: timelineColor.startsWith('var(') ? timelineColor : undefined }}></div>
+      <div className="border-[3px] border-text-primary bg-bg-secondary shadow-[6px_6px_0_var(--color-black)] flex-1">
         <div className="p-6">
           <div className="flex items-baseline gap-4 mb-3">
-            <span className="font-['Space_Grotesk'] font-bold text-md text-[#4F46E5]">{date}</span>
+            <span className="font-['Space_Grotesk'] font-bold text-md text-indigo">{date}</span>
             {workType && (
-              <span className="text-lg font-bold bg-[#020122] text-white px-2 py-1">{workType}</span>
+              <span className="text-lg font-bold bg-text-primary text-white px-2 py-1">{workType}</span>
             )}
           </div>
           <p className="font-semibold text-xl mb-1">{role}</p>
@@ -41,7 +41,7 @@ export default function ExperienceCard({
           </div>
           <div className="flex flex-wrap gap-2 mb-4">
             {techStack.map((tech, index) => (
-              <span key={index} className="px-3 py-1 border-[2px] border-[#020122] text-[#020122] font-['Space_Mono'] text-sm font-medium">
+              <span key={index} className="px-3 py-1 border-[2px] border-text-primary text-text-primary font-['Space_Mono'] text-sm font-medium">
                 {tech}
               </span>
             ))}
